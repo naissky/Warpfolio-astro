@@ -1,22 +1,43 @@
+---
+// Supports weights 100-900
+import '@fontsource-variable/dm-sans';
+
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
+  <Head />
+  <body>
+	<Header />
+    <main class="max-w-screen-lg w-full mx-auto">
 		<slot />
-	</body>
+	</main>
+	<span class="bg-zinc-950/50 text-shark-50 px-4 py-2 fixed bottom-10 left-10 rounded-full backdrop-blur-xl opa ">
+		Github: <a href="https://github.com/naissky/warpfolio-astro" target="_blank" class="underline text-pink-500 hover:text-pink-400">warpfolio-astro</a>
+	</span>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  :root {
+    --background: #1e1e1e;
+    --color: #f6f6f6;
+  }
+
+  html,
+  body {
+    font-family: 'DM Sans Variable', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    color: var(--color);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+  }
 </style>

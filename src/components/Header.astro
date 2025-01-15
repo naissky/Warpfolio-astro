@@ -1,0 +1,45 @@
+<header class="sticky top-5 mx-auto z-50 max-w-screen-xl w-full text-shark-50 px-5 mb-10">
+  <nav
+    class="flex items-center justify-between gap-10 font-medium bg-zinc-950/20 rounded-2xl p-5 backdrop-blur-md"
+  >
+    <a
+      href="/"
+      class="flex items-center gap-2 text-xl font-bold hover:transform hover:scale-105 ease-out duration-150"
+    >
+      <img src="/logo.svg" alt="warpfolio logo" class="size-10" />
+      <span class="hidden md:block"> Warpfolio </span>
+    </a>
+    <div>
+      <!-- toogle menu bar -->
+      <button id="toggler" class="md:hidden flex flex-col justify-center size-10">
+        <span class="block w-6 h-0.5 bg-shark-50/70 mb-1.5"></span>
+        <span class="block w-6 h-0.5 bg-shark-50/70 mb-1.5"></span>
+        <span class="block w-6 h-0.5 bg-shark-50/70 mb-1.5"></span>
+
+      </button>
+    </div>
+    <ul class="hidden md:flex items-center gap-5 px-4 text-lg">
+      <li><a href="/">Blog</a></li>
+      <li><a href="/">Resources</a></li>
+      <li><a href="/">Github</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  #toggler span {
+    transition: all 0.2s;
+    transform-origin: left;
+  }
+  #toggler:hover span:first-child {
+    transform: rotate(45deg);
+  }
+
+  #toggler:hover span:nth-child(2) {
+    transform: scale(0);
+  }
+
+  #toggler:hover span:last-child {
+    transform: rotate(-45deg);
+  }
+</style>

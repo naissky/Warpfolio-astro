@@ -15,31 +15,65 @@
         <span class="block w-6 h-0.5 bg-shark-50/70 mb-1.5"></span>
         <span class="block w-6 h-0.5 bg-shark-50/70 mb-1.5"></span>
         <span class="block w-6 h-0.5 bg-shark-50/70 mb-1.5"></span>
-
       </button>
     </div>
     <ul class="hidden md:flex items-center gap-5 px-4 text-lg">
-      <li><a href="/">Blog</a></li>
-      <li><a href="/">Resources</a></li>
-      <li><a href="/">Github</a></li>
+      <li><a class="text-shark-50 hover:text-shark-50/60" href="/">Blog</a></li>
+      <li><a class="text-shark-50 hover:text-shark-50/60" href="/">Resources</a></li>
+      <li>
+        <a
+          class="text-shark-50 hover:text-shark-50/60"
+          href="https://github.com/naissky/Warpfolio-astro"
+          target="_blank">Github</a
+        >
+      </li>
     </ul>
   </nav>
+  <div id="menu" class="hidden md:hidden absolute z-50 top-30 left-0 w-full min-h-screen bg-shark-950/80 backdrop-blur-md">
+    <ul class="py-10 flex flex-col items-center gap-5 px-4 text-lg">
+      <li><a class="text-shark-50 hover:text-shark-50/60" href="/">Blog</a></li>
+      <li><a class="text-shark-50 hover:text-shark-50/60" href="/">Resources</a></li>
+      <li>
+        <a
+          class="text-shark-50 hover:text-shark-50/60"
+          href="https://github.com/naissky/Warpfolio-astro"
+          target="_blank">Github</a
+        >
+      </li>
+    </ul>
+  </div>
 </header>
 
 <style>
+  #toggler.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+
+  #toggler.active span:nth-child(2) {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #toggler.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    transition: transform 0.3s ease;
+  }
+
   #toggler span {
-    transition: all 0.2s;
-    transform-origin: left;
-  }
-  #toggler:hover span:first-child {
-    transform: rotate(45deg);
-  }
-
-  #toggler:hover span:nth-child(2) {
-    transform: scale(0);
-  }
-
-  #toggler:hover span:last-child {
-    transform: rotate(-45deg);
+    transform: rotate(0) translateY(0);
+    opacity: 1;
+    transition: all 0.3s ease;
   }
 </style>
+
+<script>
+
+  const toggler = document.getElementById('toggler');
+  const menu = document.getElementById('menu');
+  
+  toggler?.addEventListener('click', () => {
+    toggler.classList.toggle('active');
+    menu?.classList.toggle('hidden');
+  })
+</script>

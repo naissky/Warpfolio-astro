@@ -3,14 +3,14 @@
 import '@fontsource-variable/dm-sans';
 
 import Head from '../components/Head.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/Header.jsx';
 ---
 
 <!doctype html>
 <html lang="en">
   <Head />
   <body>
-	<Header />
+    <Header client:load/>  
     <main class="max-w-screen-lg w-full mx-auto">
 		<slot />
 	</main>
